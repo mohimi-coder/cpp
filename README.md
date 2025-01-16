@@ -13,7 +13,11 @@ It contains all the modules from the C++ Piscine at 42 School, organized into in
 
 ## Module Overview:
   ✔️ Module 00: Introduction to namespaces, classes, member functions, standard I/O streams, initialization lists, static and const keywords, and other foundational concepts.
+  
   ✔️ Module 01: Focus on memory allocation, references, pointers to members, and file streams.
+  
   ✔️ Module 02: Exploration of ad-hoc polymorphism, operator overloading, and canonical class structures.
+  
   ✔️ Module 03: Deep dive into inheritance.
+  
   ✔️ Module 04: Understanding subtype polymorphism, abstract classes, and interfaces.
