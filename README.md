@@ -12,7 +12,8 @@ This repository marks the beginning of my journey into Object-Oriented Programmi
 It contains all the modules from the C++ Piscine at 42 School, organized into individual folders. Each folder includes the corresponding exercises and a PDF with detailed instructions.
 
 ## Module Overview:
-  ✔️ Module 00: Introduction to namespaces, classes, member functions, standard I/O streams, initialization lists, static and const keywords, and other foundational concepts.
+  ✔️ Module 00: Introduction to namespaces, classes, member functions, standard I/O streams, initialization lists,   
+     static and const keywords, and other foundational concepts.
   
   ✔️ Module 01: Focus on memory allocation, references, pointers to members, and file streams.
   
