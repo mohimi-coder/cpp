@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:20:11 by mohimi            #+#    #+#             */
-/*   Updated: 2024/12/10 21:47:19 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/01/20 21:42:29 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ int main()
 
     std::cout << b_ora << "\nTesting ERROR level:" << res << std::endl;
     harl.complain("ERROR");
-
-    std::cout << b_ora << "\nTesting an unknown level:" << res << std::endl;
-    harl.complain("UNKNOWN");
 
     return 0;
 }
