@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 21:47:49 by mohimi            #+#    #+#             */
-/*   Updated: 2025/01/26 15:42:44 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/01/28 15:49:19 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #define BUREAUVRAT_HPP
 
 #include <iostream>
-#include <string>
 #include <exception>
-#include <ostream>
 
 # define RESET "\033[0m"
 # define RED "\033[1;31m"

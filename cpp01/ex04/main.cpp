@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:35:34 by mohimi            #+#    #+#             */
-/*   Updated: 2024/12/19 15:05:50 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/01/27 12:18:57 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ int main(int ac, char **av)
 	file.close();
 	output.close();
 	return 0;
+
 }

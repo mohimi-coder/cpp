@@ -27,20 +27,20 @@ Form::~Form()
 {
 }
 
-Form::Form(const Form &other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExecute(other.getGradeToExecute())
+Form::Form(const Form &other) : _name(other.getName()),
+                                _signed(other.getSigned()),
+                                _gradeToSign(other.getGradeToSign()),
+                                _gradeToExecute(other.getGradeToExecute())
 {
-    _signed = other.getSigned();
 }
 
-const char* Form::GradeTooHighException::what() const throw() 
+const char *Form::GradeTooHighException::what() const throw()
 {
     return GREEN "Grade is too high!" RESET;
 }
 
-const char* Form::GradeTooLowException::what() const throw() 
+const char *Form::GradeTooLowException::what() const throw()
 {
-
-
     return RED "Grade is too low!" RESET;
 }
 
@@ -85,6 +85,6 @@ std::ostream &operator<<(std::ostream &out, const Form &value)
         out << CYAN "signed" RESET;
     else
         out << RED "not signed" RESET << std::endl;
-    out << gold " and requires grade " RESET << value.getGradeToSign() << gold " to sign and grade "  RESET << value.getGradeToExecute() << gold " to execute." RESET << std::endl;
+    out << gold " and requires grade " RESET << value.getGradeToSign() << gold " to sign and grade " RESET << value.getGradeToExecute() << gold " to execute." RESET << std::endl;
     return out;
 }

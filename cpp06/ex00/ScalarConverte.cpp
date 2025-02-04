@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:01:05 by mohimi            #+#    #+#             */
-/*   Updated: 2025/01/25 12:04:53 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/04 15:19:36 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int convertToInt(std::string &str)
     std::stringstream s(str);
     int i;
     s >> i;
-    if (s.fail() || !s.eof())
-        throw "impossible";
+    if (s.fail())
+        throw std::runtime_error(RED "char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible" RESET);
     return (i);
 }
 
@@ -123,8 +123,9 @@ float convertToFloat(std::string &str)
 {
     std::stringstream s(str);
     float f;
-    if (!(s >> f))
-        throw "impossible";
+    s >> f;
+    if (s.fail() || s.eof())
+        throw std::runtime_error(RED "char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible" RESET);
     return (f);
 }
 
@@ -134,7 +135,7 @@ double convertToDouble(std::string &str)
     double d;
     s >> d;
     if (s.fail() || !s.eof())
-        throw "impossible";
+        throw std::runtime_error(RED "char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible" RESET);
     return (d);
 }
 
@@ -143,29 +144,35 @@ void ScalarConverte::convert(std::string &str)
     try
     {
         if (non_printable(str))
-            throw "invalid input";
+            throw std::runtime_error(RED "invalid input" RESET);
         if (isChar(str))
         {
             char c = str[0];
-            if ((c >= 0 && c <= 32) || c == 127)
-                std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: ";
+            if ((c >= 0 && c < 32) || c == 127)
+                std::cout << RED "Non displayable" RESET  << std::endl;
+            else if (c > std::numeric_limits<int>::max() || c < std::numeric_limits<int>::min())
+                std::cout << RED "impossible" RESET << std::endl;
             else
-                std::cout << "char: '" << c << "'" << std::endl;
-            std::cout << "int: " << static_cast<int>(c) << std::endl;
-            std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+                std::cout << Gold "'" << c << "'" RESET << std::endl;
+            std::cout << Gold "int: " RESET << static_cast<int>(c) << std::endl;
+            std::cout << Gold "float: " RESET << static_cast<float>(c) << ".0f" << std::endl;
+            std::cout << Gold "double: " RESET << static_cast<double>(c) << ".0" << std::endl;
             return;
         }
         else if (isInt(str))
         {
             int i = convertToInt(str);
-            if (i < 0 || (i >= 0 && i <= 32) || i >= 127)
-                std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: ";
+            if (i < 0 || (i >= 0 && i < 32) || i == 127)
+                std::cout << RED "Non displayable" RESET << std::endl;
+            else if (i > std::numeric_limits<char>::max() || i < std::numeric_limits<char>::min())
+                std::cout << RED "impossible" RESET << std::endl;
             else
-                std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
-            std::cout << "int: " << i << std::endl;
-            std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+                std::cout << Gold "'" RESET<< static_cast<char>(i) << "'" << std::endl;
+            std::cout << Gold "int: " RESET << i << std::endl;
+            std::cout << Gold "float: " RESET << static_cast<float>(i) << ".0f" << std::endl;
+            std::cout << Gold "double: " RESET << static_cast<double>(i) << ".0" << std::endl;
             return;
         }
         else if (isFloat(str))
@@ -173,57 +180,68 @@ void ScalarConverte::convert(std::string &str)
             float f = convertToFloat(str);
             std::cout << "char: ";
             if (f < 0 || (f >= 0 && f < 32) || f == 127)
-                std::cout << "Non displayable" << std::endl;
+                std::cout << RED "Non displayable" RESET << std::endl;
+            else if (f > FT)
+                std::cout << RED "impossible" RESET << std::endl;
             else
                 std::cout << "'" << static_cast<char>(f) << "'" << std::endl;
-            std::cout << "int: " << static_cast<int>(f) << std::endl;
-            std::cout << "float: " << f << ".ll0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(f) << ".0" << std::endl;
+            if (f > 2147483647 || f < -2147483648)
+                std::cout << RED "int: impossible" RESET << std::endl;
+            else
+                std::cout << Gold "int: " RESET << static_cast<int>(f) << std::endl;
+            std::cout << Gold "float: " RESET << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+            std::cout << Gold "double: " RESET << std::fixed << std::setprecision(1) << static_cast<double>(f) << std::endl;
             return;
         }
         else if (isDouble(str))
         {
             double d = convertToDouble(str);
-             if (d < 0 || (d >= 0 && d <= 32) || d >= 127)
-                std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: ";
+             if (d < 0 || (d >= 0 && d < 32) || d == 127)
+                std::cout << RED "Non displayable" RESET << std::endl;
+            else if (d > std::numeric_limits<char>::max() || d < std::numeric_limits<char>::min())
+                std::cout << RED "impossible" RESET << std::endl;
             else
-                std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
-            std::cout << "int: " << static_cast<int>(d) << std::endl;
-            std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-            std::cout << "double: " << d << std::endl;
+                std::cout << Gold "'" << static_cast<char>(d) << "'" RESET << std::endl;
+            if (d > 2147483647 || d < -2147483648)
+                std::cout << RED "int: impossible" RESET << std::endl;
+            else
+                std::cout << Gold "int: " RESET << static_cast<int>(d) << std::endl;
+            std::cout << Gold "float: " RESET << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
+            std::cout << Gold "double: " RESET << std::fixed << std::setprecision(1) << d << std::endl;
             return;
         }
         else if (isSpecial(str))
         {
            if (str == "-inf" || str == "-inff")
             {
-                std::cout << "char: impossible" << std::endl;
-                std::cout << "int: impossible" << std::endl;
-                std::cout << "float: -inff" << std::endl;
-                std::cout << "double: -inf" << std::endl;
+                std::cout << RED "char: impossible" RESET << std::endl;
+                std::cout << RED "int: impossible" RESET << std::endl;
+                std::cout << Gold "float: -inff" RESET << std::endl;
+                std::cout << Gold "double: -inf" RESET << std::endl;
                 return;
             }
             if (str == "+inf" || str == "+inff")
             {
-                std::cout << "char: impossible" << std::endl;
-                std::cout << "int: impossible" << std::endl;
-                std::cout << "float: +inff" << std::endl;
-                std::cout << "double: +inf" << std::endl;
+                std::cout << RED "char: impossible" RESET << std::endl;
+                std::cout << RED "int: impossible" RESET << std::endl;
+                std::cout << Gold "float: +inff" RESET << std::endl;
+                std::cout << Gold "double: +inf" RESET << std::endl;
                 return;
             }
             if (str == "nan" || str == "nanf")
             {
-                std::cout << "char: impossible" << std::endl;
-                std::cout << "int: impossible" << std::endl;
-                std::cout << "float: nanf" << std::endl;
-                std::cout << "double: nan" << std::endl;
+                std::cout << RED "char: impossible" RESET<< std::endl;
+                std::cout << RED "int: impossible" RESET << std::endl;
+                std::cout << Gold "float: nanf" RESET << std::endl;
+                std::cout << Gold "double: nan" RESET << std::endl;
                 return;
             }
         }
-        throw "invalid input";
+        throw std::runtime_error(RED "invalid input" RESET);
     }
-    catch(const char *e)
+    catch(std::exception &e)
     {
-        std::cout << e << std::endl;
+        std::cout << e.what() << std::endl;
     }
 }

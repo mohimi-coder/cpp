@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:08:26 by mohimi            #+#    #+#             */
-/*   Updated: 2024/12/11 13:28:49 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/01/27 12:01:31 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,19 @@ void Harl::harl_filter( std::string level )
 	{
 	case 0:
 		debug();
+		info();
+		warning();
+		error();
+		break;
 	case 1:
 		info();
+		warning();
+		error();
+		break;
 	case 2:
 		warning();
+		error();
+		break;
 	case 3:
 		error();
 		break;

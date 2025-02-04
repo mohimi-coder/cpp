@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 16:13:12 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/03 16:49:09 by mohimi           ###   ########.fr       */
+/*   Created: 2025/01/29 22:29:30 by mohimi            #+#    #+#             */
+/*   Updated: 2025/01/29 23:06:01 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-    if (ac != 2)
-    {
-        std::cout << RED "Error: wrong number of arguments" RESET << std::endl;
-        return (1);
-    }
-    std::string str = av[1];
-    ScalarConverte::convert(str);
+    Serializer s;
+    Data *d = new Data(42, "Mohimi");
+    uintptr_t raw = s.serialize(d);
+    Data *d2 = s.deserialize(raw);
+    std::cout << d2->_id << std::endl;
+    std::cout << d2->_name << std::endl;
+    delete d;
     return (0);
 }

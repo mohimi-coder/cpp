@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:58:36 by mohimi            #+#    #+#             */
-/*   Updated: 2025/01/24 22:22:48 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/01/29 11:22:13 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+
+#define RED "\033[0;31m"
+#define Gold "\033[0;33m"
+#define RESET "\033[0m"
 
 class ScalarConverte
 {

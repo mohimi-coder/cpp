@@ -1,5 +1,5 @@
 C++ = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
 	 RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 NAME = aform
