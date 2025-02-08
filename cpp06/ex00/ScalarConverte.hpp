@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:58:36 by mohimi            #+#    #+#             */
-/*   Updated: 2025/01/29 11:22:13 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:57:30 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <limits>
 #include <iomanip>
 #include <sstream>
-#include <cmath>
 #include <iostream>
 #include <string>
 
@@ -26,14 +25,12 @@
 
 class ScalarConverte
 {
-    private:
-        double d;
-        bool is_float;
-    public:
+   private:
         ScalarConverte();
+    public:
         ScalarConverte(const ScalarConverte &other);
         ~ScalarConverte();
-        ScalarConverte &operator=(const ScalarConverte &other);
+        ScalarConverte &operator=(const ScalarConverte &other);          
         static void convert(std::string &str);
 };
 

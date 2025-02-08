@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:43:02 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/03 14:54:18 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/07 15:24:51 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ T max(T a, T b)
         return a;
     return b;
 }
+
 class Whatever
 {
     public:

@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 21:17:28 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 21:34:43 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/08 12:31:59 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ template <class T>
 
 Array<T>::Array(const Array &obj)
 {
+    std::cout << "i am here in coppy constructor\n";
     _size = obj._size;
     _arr = new T[_size];
     for (size_t i = 0; i < _size; i++)
@@ -38,6 +39,7 @@ template <class T>
 
 Array<T> &Array<T>::operator=(const Array &obj)
 {
+    std::cout << "i am here in the coppy a signment\n";
     if (this != &obj)
     {
         delete[] _arr;

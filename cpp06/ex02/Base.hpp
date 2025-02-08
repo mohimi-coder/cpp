@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:25:14 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 12:49:16 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:58:22 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Base
 {
     public:
         virtual ~Base() {};
-    
 };
 
 class A : public Base {};

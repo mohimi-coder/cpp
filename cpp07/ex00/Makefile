@@ -1,5 +1,5 @@
 C++ = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address -std=c++98
 SRC = main.cpp whatever.cpp
 NAME = whatever
 OBJCS = $(SRC:.cpp=.o)

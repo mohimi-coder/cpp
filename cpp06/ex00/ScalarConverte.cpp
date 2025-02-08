@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:01:05 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 15:19:36 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/04 18:08:57 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,8 +151,6 @@ void ScalarConverte::convert(std::string &str)
             std::cout << "char: ";
             if ((c >= 0 && c < 32) || c == 127)
                 std::cout << RED "Non displayable" RESET  << std::endl;
-            else if (c > std::numeric_limits<int>::max() || c < std::numeric_limits<int>::min())
-                std::cout << RED "impossible" RESET << std::endl;
             else
                 std::cout << Gold "'" << c << "'" RESET << std::endl;
             std::cout << Gold "int: " RESET << static_cast<int>(c) << std::endl;
@@ -164,10 +162,10 @@ void ScalarConverte::convert(std::string &str)
         {
             int i = convertToInt(str);
             std::cout << "char: ";
-            if (i < 0 || (i >= 0 && i < 32) || i == 127)
-                std::cout << RED "Non displayable" RESET << std::endl;
-            else if (i > std::numeric_limits<char>::max() || i < std::numeric_limits<char>::min())
+            if (i > std::numeric_limits<char>::max() || i < std::numeric_limits<char>::min())
                 std::cout << RED "impossible" RESET << std::endl;
+            else if (i < 0 || (i >= 0 && i < 32) || i == 127)
+                std::cout << RED "Non displayable" RESET << std::endl;
             else
                 std::cout << Gold "'" RESET<< static_cast<char>(i) << "'" << std::endl;
             std::cout << Gold "int: " RESET << i << std::endl;
@@ -179,10 +177,10 @@ void ScalarConverte::convert(std::string &str)
         {
             float f = convertToFloat(str);
             std::cout << "char: ";
-            if (f < 0 || (f >= 0 && f < 32) || f == 127)
-                std::cout << RED "Non displayable" RESET << std::endl;
-            else if (f > FT)
+            if (f > std::numeric_limits<char>::max() || f < std::numeric_limits<char>::min())
                 std::cout << RED "impossible" RESET << std::endl;
+            else if (f < 0 || (f >= 0 && f < 32) || f == 127)
+                std::cout << RED "Non displayable" RESET << std::endl;
             else
                 std::cout << "'" << static_cast<char>(f) << "'" << std::endl;
             if (f > 2147483647 || f < -2147483648)
@@ -197,10 +195,10 @@ void ScalarConverte::convert(std::string &str)
         {
             double d = convertToDouble(str);
             std::cout << "char: ";
-             if (d < 0 || (d >= 0 && d < 32) || d == 127)
-                std::cout << RED "Non displayable" RESET << std::endl;
-            else if (d > std::numeric_limits<char>::max() || d < std::numeric_limits<char>::min())
+            if (d > std::numeric_limits<char>::max() || d < std::numeric_limits<char>::min())
                 std::cout << RED "impossible" RESET << std::endl;
+            else if (d < 0 || (d >= 0 && d < 32) || d == 127)
+                std::cout << RED "Non displayable" RESET << std::endl;
             else
                 std::cout << Gold "'" << static_cast<char>(d) << "'" RESET << std::endl;
             if (d > 2147483647 || d < -2147483648)

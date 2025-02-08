@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:46 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 12:49:53 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/06 11:53:43 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Base* generate(void)
 
 void identify(Base* p)
 {
+    if (p == NULL)
+        return;
     if (dynamic_cast<A*>(p))
         std::cout << Gold "A" RESET << std::endl;
     else if (dynamic_cast<B*>(p))

@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 09:50:25 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 11:06:22 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/07 16:13:32 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,18 @@
 #define CYAN "\033[36m"
 #define RESET "\033[0m"
 
-template <class T, class F>
-
-void iter(T *arr, size_t lengh, F func)
-{
-    for (size_t i = 0; i < lengh; i++)
-    {
-        func(arr[i]);
-    }
-}
-
 template <class T>
 
-void print(T const &x)
+void iter(T *arr, size_t lenght, void (*f)(T &))
+{
+    for (size_t i = 0; i < lenght; i++)
+        f(arr[i]);
+}
+template <class T>
+
+void print(T  &x)
 {
     std::cout << x << " " << std::endl;
 }
 
-template <class T>
-
-void increment(T &x)
-{
-    x += 1;
-}
 #endif

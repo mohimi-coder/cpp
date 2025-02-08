@@ -6,7 +6,7 @@
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:21:34 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/04 11:09:22 by mohimi           ###   ########.fr       */
+/*   Updated: 2025/02/07 16:14:20 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,18 @@ int main()
 
     std::cout << GOLD "==================Int array: =================" RESET << std::endl;
 
-    ::iter(arr, arr_size, print<int>);
-    ::iter(arr, arr_size, increment<int>);
+    iter(arr, arr_size, print<int>);
 
     std::cout << GREEN "==================String array: ===============" RESET<< std::endl;
     
-    ::iter(arr2, arr2_size, print<std::string>);
-    ::iter(arr2, arr2_size, increment<std::string>);
+    iter(arr2, arr2_size, print<std::string>);
 
     std::cout << YELLOW "===================Double array: ===============" RESET<< std::endl;
 
-    ::iter(arr3, arr3_size, print<double>);
-    ::iter(arr3, arr3_size, increment<double>);
+    iter(arr3, arr3_size, print<double>);
 
     std::cout << CYAN "===================Char array: ==================" RESET << std::endl;
 
-    ::iter(arr4, arr4_size, print<char>);
-    ::iter(arr4, arr4_size, increment<char>);
+    iter(arr4, arr4_size, print<char>);
     return 0;
 }
