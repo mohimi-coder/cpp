@@ -1,55 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 13:43:02 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/09 10:23:02 by mohimi           ###   ########.fr       */
+/*   Created: 2025/02/14 19:10:20 by mohimi            #+#    #+#             */
+/*   Updated: 2025/02/16 13:39:49 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
-
-#include <iostream>
-#include <string>
+#include "MutantStack.hpp"
 
 template <class T>
 
-void swap(T &a, T &b)
+MutantStack<T>::MutantStack()
 {
-    T tmp = a;
-    a = b;
-    b = tmp;
 }
 
 template <class T>
 
-T min(T &a, T &b)
+MutantStack<T>::MutantStack(MutantStack &other) : std::stack<T>(other)
 {
-    if (a < b)
-        return a;
-    return b;
+    *this = other;
 }
 
 template <class T>
 
-T max(T &a, T &b)
+MutantStack<T> &MutantStack<T>::operator=(MutantStack &other)
 {
-    if (a > b)
-        return a;
-    return b;
+    if (this != &other)
+        std::stack<T>::operator=(other);
+    return *this;
 }
 
-class Whatever
-{
-    public:
-        Whatever();
-        Whatever(const Whatever &obj);
-        Whatever &operator=(const Whatever &obj);
-        ~Whatever();
-};
+template <class T>
 
-#endif
+MutantStack<T>::~MutantStack()
+{
+}

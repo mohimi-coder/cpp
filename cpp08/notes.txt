@@ -1,0 +1,119 @@
+//Topic: STL introduction in C++
+
+//NOTES:
+
+//1. STL: standard Template Library
+//2. It considt of three components
+
+//   a. Container
+//   b.Iterator
+//   c.Algorithm
+
+
+===============================================================================
+
+TOPIC: std::array
+= Yantax: std::array<T, N> array;
+
+#NOTES:
+1- std::array is a container that encapsulares fixed size arrays.
+2_ arraysize is needed at compile time
+3- Assign by value is actually by value
+4- Access elements:
+
+    a- at() // this one and this one ([]) doing the same thing but there a alitlle bite difference: the first one throw an exception if ir fails but the last one is not.
+    b. front()
+    c. []
+    d.back();
+    e.data() // gives Access to the underlying array
+
+===================================================================================
+
+//TPPIC: std:vector
+
+//NOTES:
+
+1- std::vector is sequence container and also known as Dynamic Array or Array list.
+2- Its size can grow and shrink Dynamically, and need to probide size at compile time
+
+// ELEMENT Access
+// Insert(), at(), [], front(), back(), data()
+
+#MODIFIERS:
+
+//insert(), emplace(), push_back(), emplace_back(), pop_back(), resize(), swap(), erase(), clear()
+
+======================================================================================================
+
+#TOPIC: std::set<T>
+
+//SYNTAX: std::set<T> obectName
+
+1 - std::set is an Associative container that constains a sorted set of unique objects of type key
+2 - it is usually implemented using Red_Black three
+3 - insertion, Removal, Search have logirathmic complexity 
+4 - if we want to store user sefined data type in set then we will have to provide
+    compare function so that set can store them in sorted order.
+5 - we can pass the order of sorting while constructing set objects
+
+
+#BOTTOM LINE:
+//It store unique elements and they are stored in sorted order (A/D)
+
+
+==========================================================================================================
+
+
+TOPIC: std::deque in C++ !! (Double ended Queue)
+
+NOTES:
+
+0. std::deque is an indexed siquence container.
+1. It allow fast insertion at both beginning and end.
+2.Unlike vector elements of deque are not stored contiguous.
+3. it uses indinidual allocated fixed size array, with additional bookkeeping, meaning index based access to deque
+    must perform two pointer difference, but in vector we get in one difference.
+4. The storage of a deque is automatically expanded and contracted as needed.
+5. exception of deque is cheaper than exception of vector.
+6. A deque holding just one element has to allocate its full internal array (e.g 8 times the objest size on
+    64-bit libstdc++; 16 times the object size or 4096 bytes, whichever is larger, on 64-bit libc++)
+
+//TIME COMPLESITY:
+
+*random access - constant 0(1)
+*insertion or removal of elements at the end or beginning - constant 0(1)
+*insertion or removal of elements - linear 0(n)
+
+
+========================================================================================
+
+#TOPIC: std::stack in c++!
+
+//NOTES:
+0. std::stack class is a container adapter that gives the programme the functionality of a stack 
+1. internally it uses std::deque STL container
+2. It is LIFO (last-in, first-out) data structure
+3. std::stack allows to push(insert) and pop(rmove) from back
+
+//FUNCTIONS PROVIDED:
+
+* empty(): returns whether the stack is empty _ Time complexity : 0(1)
+* size(): returns the size of the stack - Time complexity: 0()1
+* top(): returns a reference to the top most element ot the stack - Time complexity: 0(1)
+* push(n): adds the element 'n' at the top of the stack - Time complexity: 0(1)
+* pop() : deletes the top most element of the stack - Time complexity: 0(1)
+
+=================================================================================================
+
+TOPIC: list in STL
+
+1- this is Double linked list what we known from c programming language.
+2 - list is sequence container that allow non-contiguas memory allocation 
+3- list is faster compared to other sequence containers (vector, forward_lis, deque) in terms of
+    insertion, removal and moving elements in any position provided we have the iterator of the position 
+4- we should use this class instead of traditional double linked list because 
+    a_ well tested
+    b_ Bunch of available function 
+5_ Few available operations 
+    opetator=, assign, front, back, empty, size, clear, insert, emplace, push_back, pop_back, push_front
+    pop_front, reverse, sort, merge, splice, unique, remove, remove_if, resise

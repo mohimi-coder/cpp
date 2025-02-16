@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohimi <mohimi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 20:48:05 by mohimi            #+#    #+#             */
-/*   Updated: 2025/02/09 10:31:43 by mohimi           ###   ########.fr       */
+/*   Created: 2025/02/08 21:33:02 by mohimi            #+#    #+#             */
+/*   Updated: 2025/02/16 16:54:23 by mohimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
-#include <string>
+#include <algorithm>
+#include <vector>
+#include <list>
 
-template <class T>
 
-class Array
+
+template <typename T>
+
+int easyfind(T &container, int value)
 {
-    private:
-        T *_arr;
-        size_t _size;
-    public:
-        Array();
-        Array(size_t n);
-        Array(const Array &obj);
-        Array &operator=(const Array &obj);
-        ~Array();
-        T &operator[](size_t n);
-        size_t size() const;
-};
-#include "Array.tpp"
+    typename T::iterator it = std::find(container.begin(), container.end(), value);
+    if (it == container.end())
+        throw std::exception();
+    return *it;
+}
 
 #endif
