@@ -22,3 +22,11 @@ It contains all the modules from the C++ Piscine at 42 School, organized into in
   ✔️ Module 03: Deep dive into inheritance.
   
   ✔️ Module 04: Understanding subtype polymorphism, abstract classes, and interfaces.
+
+  ✔️ Module 05: This Module is designed to help you understand Try/Catch and Exceptions in CPP.
+
+  ✔️ Module 06: This Module is designed to help you understand the different casts in CPP.
+
+  ✔️ Module 07: This Module is designed to help you understand Templates in CPP.
+
+  ✔️ Module 08: This Module is designed to help you understand templated containers, iterators and algorithms in CPP.
