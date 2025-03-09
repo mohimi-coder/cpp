@@ -13,21 +13,6 @@
 
 ## CPP Modules - 42 School
 
-| Module | Topics |
-|--------|--------|
-| 00 | Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff |
-| 01 | Memory allocation, pointers to members, references, switch statement |
-| 02 | Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form |
-| 03 | Inheritance |
-| 04 | Subtype polymorphism, abstract classes, interfaces |
-| 05 | Repetition and Exceptions |
-| 06 | C++ casts |
-| 07 | C++ templates |
-| 08 | Templated containers, iterators, algorithms |
-| 09 | STL |
-This repository marks the beginning of my journey into Object-Oriented Programming (OOP), following an intensive year dedicated to mastering C programming. 
-It contains all the modules from the C++ Piscine at 42 School, organized into individual folders. Each folder includes the corresponding exercises and a PDF with detailed instructions.
-
 ## Module Overview:
 
   ✔️ Module 00: Introduction to namespaces, classes, member functions, standard I/O streams, initialization lists,   
