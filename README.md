@@ -34,6 +34,6 @@
 
   ✔️ Module 08: This Module is designed to help you understand templated containers, iterators and algorithms in CPP.
   
-  ✔️ Module 09: This Module will help you improve your understanding of data structures, algorithms, and the C++ programming language.
-    By building your own container classes and algorithms, you will gain valuable insight into how the Standard Template Library works in practice
+  ✔️ Module 09: In this module, I've tackled challenging C++ programming tasks that emphasize leveraging the Standard Template Library (STL)
+  to solve intricate problems involving bitcoin exchange rates, reverse polish notation, and advanced sorting algorithms.
 
