@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/BaBreton/42-Get_next_line/assets/124448529/43a36b92-4c44-4c58-b03c-b18903712b45" alt="mohimi" />
+  <img src="https://github.com/mohimi-coder/cpp/assets/124448529/43a36b92-4c44-4c58-b03c-b18903712b45" alt="mohimi" />
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C++-blue" alt="language" />
