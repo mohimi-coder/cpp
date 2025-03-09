@@ -33,4 +33,6 @@
   ✔️ Module 07: This Module is designed to help you understand Templates in CPP.
 
   ✔️ Module 08: This Module is designed to help you understand templated containers, iterators and algorithms in CPP.
+  ✔️ Module 09: This Module will help you improve your understanding of data structures, algorithms, and the C++ programming language.
+    By building your own container classes and algorithms, you will gain valuable insight into how the Standard Template Library works in practice
 
